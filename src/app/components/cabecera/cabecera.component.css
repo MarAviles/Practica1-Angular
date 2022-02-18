@@ -1,0 +1,37 @@
+nav {
+    background-color: #333;
+}
+
+#header {
+    list-style-type: none;
+    margin: 0px auto;
+    width: 400px;
+}
+
+#header nav {
+    height: 60px;
+    margin: 0px auto;
+}
+
+
+#header nav a {
+    display: table-cell; 
+    vertical-align: middle;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+#header nav a:hover {
+    background-color: rgb(255, 242, 205);
+    color: black;
+}
+
+
+ 
