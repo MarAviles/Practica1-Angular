@@ -3,7 +3,7 @@
     text-align: center;
     width: 150px;
     padding: 10px;
-    background-color: rgb(158, 155, 155);
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
 }
