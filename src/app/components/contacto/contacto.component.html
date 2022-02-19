@@ -2,30 +2,35 @@
     <app-cabecera></app-cabecera>
 </header>
 
-<div class="formulario">
-    <h2>Contáctame!</h2>
-    <form [formGroup] = "formulario" (ngSubmit)="onsubmit()">
-        <label for="nombre">Nombre</label><br>
-        <input type="text" id="name" formControlName="nombre"><br>
-
-        <label for="apellido">Apellido</label><br>
-        <input type="text" id="apellido" formControlName="apellido"><br>
-
-        <label for="email">Email</label><br>
-        <input type="email" id="email" formControlName="email"><br>
-
-        <label for="coments">Comentarios</label><br>
-        <textarea formControlName="comentario"></textarea><br>
-
-        <input type="submit" value="Enviar">
-      </form>
-
-</div>
-
 <div class="contenido">
 
+    <div class="contenedores" id = "formulario">
+        <h2>Contáctame!</h2>
+        <form form [formGroup] = "formulario" (ngSubmit)="onsubmit()">
+            <label for="nombre">Nombre</label><br>
+            <input type="text" id="name" formControlName="nombre"><br>
+
+            <label for="apellido">Apellido</label><br>
+            <input type="text" id="apellido" formControlName="apellido"><br>
+
+            <label for="email">Email</label><br>
+            <input type="email" id="email" formControlName="email"><br>
+
+            <label for="coments">Comentarios</label><br>
+            <textarea formControlName="comentario"></textarea><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div class="contenedores" id="redes">
+    </div>
+    
+    <div class="contenedores" id="informacion">
+    </div>
+
 </div>
-  
+
 <footer>
 <app-footer></app-footer>
 </footer>
