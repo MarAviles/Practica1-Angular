@@ -23,7 +23,6 @@ status = false;
 
   constructor(private formBuilder: FormBuilder,) { }
 
-
   ngOnInit(): void {
 
   }
@@ -35,7 +34,13 @@ status = false;
     this.email = this.formulario.get('email')?.value;
     this.comentario = this.formulario.get('comentario')?.value;
    /* console.log(this.formulario.value);*/
+
+   this.limpiarForm();
   }
+
+  limpiarForm(){
+    this.formulario.reset()
+}
   
 }
 
