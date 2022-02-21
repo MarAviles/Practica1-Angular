@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class ContactoComponent implements OnInit {
 
-  formulario = new FormGroup({
+  formulario = this.formBuilder.group({
     nombre: new FormControl('', Validators.required),
     apellido: new FormControl('', Validators.required),
     email: new FormControl('', Validators.email),
@@ -15,7 +15,10 @@ export class ContactoComponent implements OnInit {
 
 });
 
-  constructor() { }
+nombre = '';
+status = false;
+
+  constructor(private formBuilder: FormBuilder,) { }
 
 
   ngOnInit(): void {
@@ -23,6 +26,8 @@ export class ContactoComponent implements OnInit {
   }
 
   onsubmit(){
+    this.status = true;
+    this.nombre = this.formulario.get('nombre')?.value;
     console.log(this.formulario.value);
   }
   

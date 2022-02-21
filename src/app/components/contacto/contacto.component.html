@@ -26,7 +26,9 @@
     <div class="contenedores" id="redes">
     </div>
     
-    <div class="contenedores" id="informacion">
+    <div *ngIf="status" class="contenedores" id="informacion">
+        <h2>Los datos ingresados fueron</h2>
+        <h3>El nombre ingresado fue: {{nombre}}</h3>
     </div>
 
 </div>
