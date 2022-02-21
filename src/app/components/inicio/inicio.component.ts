@@ -23,6 +23,8 @@ export class InicioComponent implements OnInit {
 
   usuarios:User[]=[];
   comentarios:Coment[]=[];
+  status1 = false;
+  status2 = false;
   constructor(private FormularioInter:FormBuilder) { }
 
   ngOnInit(): void {
@@ -35,6 +37,7 @@ export class InicioComponent implements OnInit {
       pagina:this.formulario1.get('pagina')?.value
     }
     this.usuarios.push(nuevoUser);
+    this.status1 = true;
     this.limpiarForm1();
   }
 
@@ -45,6 +48,7 @@ export class InicioComponent implements OnInit {
   }
 
     this.comentarios.push(nuevoComent);
+    this.status2 = true;
     this.limpiarForm2();
   }
 

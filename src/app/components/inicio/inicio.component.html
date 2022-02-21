@@ -35,7 +35,24 @@
         </form>
     </div>
 
-    <div class="contenedores" id="tabla">
+    <div class="contenedores">
+        <h2>Déjame un comentario</h2>
+        <form form [formGroup] = "formulario2" (ngSubmit)="guardar2()">
+            <label for="gustos">¿Qué te gustó de la página?</label><br>
+            <textarea formControlName="gustos"></textarea><br>
+
+            <label for="mejoras">¿Qué podría mejorar?</label><br>
+            <textarea formControlName="mejoras"></textarea><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+</div>
+
+<div class="contenidoForm">
+
+    <div *ngIf="status1" class="contenedores" id="tabla">
         <h2>Listado Usuarios</h2>
         <table>
             <tr>
@@ -50,25 +67,8 @@
             </tbody>
         </table>
     </div>
-    
-</div>
 
-<div class="contenidoForm">
-
-    <div class="contenedores">
-        <h2>Dame tu opnión</h2>
-        <form form [formGroup] = "formulario2" (ngSubmit)="guardar2()">
-            <label for="gustos">¿Qué te gustó de la página?</label><br>
-            <textarea formControlName="gustos"></textarea><br>
-
-            <label for="mejoras">¿Qué podría mejorar?</label><br>
-            <textarea formControlName="mejoras"></textarea><br>
-
-            <input type="submit" value="Enviar">
-        </form>
-    </div>
-
-    <div class="contenedores">
+    <div *ngIf="status2" class="contenedores">
         <h2>Listado de comentarios</h2>
         <table>
             <tr>
@@ -83,7 +83,7 @@
             </tbody>
         </table>
     </div>
-    
+
 </div>
 
 
