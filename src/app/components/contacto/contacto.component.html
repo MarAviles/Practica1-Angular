@@ -23,12 +23,14 @@
         </form>
     </div>
 
-    <div class="contenedores" id="redes">
-    </div>
+   <!-- <div class="contenedores" id="redes">
+    </div>-->
     
     <div *ngIf="status" class="contenedores" id="informacion">
-        <h2>Los datos ingresados fueron</h2>
-        <h3>El nombre ingresado fue: {{nombre}}</h3>
+        <h2>Gracias por tu comentario</h2>
+        <p>Hola {{nombre}} {{apellido}} <br> tu comentario "{{comentario}}" fue enviado con éxito!! 
+            <br> Pronto ricibirás una respuesta al correo {{email}}
+        </p>
     </div>
 
 </div>

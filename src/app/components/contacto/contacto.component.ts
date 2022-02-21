@@ -16,6 +16,9 @@ export class ContactoComponent implements OnInit {
 });
 
 nombre = '';
+apellido = '';
+email = '';
+comentario = '';
 status = false;
 
   constructor(private formBuilder: FormBuilder,) { }
@@ -28,7 +31,10 @@ status = false;
   onsubmit(){
     this.status = true;
     this.nombre = this.formulario.get('nombre')?.value;
-    console.log(this.formulario.value);
+    this.apellido = this.formulario.get('apellido')?.value;
+    this.email = this.formulario.get('email')?.value;
+    this.comentario = this.formulario.get('comentario')?.value;
+   /* console.log(this.formulario.value);*/
   }
   
 }
