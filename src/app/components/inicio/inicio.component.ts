@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { User } from 'src/app/interface/user.modelo';
+import { Coment } from 'src/app/interface/coment.modelo';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +10,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  formulario1 = this.FormularioInter.group({
+      nombre:'',
+      apellido:'',
+      pagina:''
+  });
+
+  formulario2 = this.FormularioInter.group({
+    mejoras:'',
+    gustos:'',
+  });
+
+  usuarios:User[]=[];
+  comentarios:Coment[]=[];
+  constructor(private FormularioInter:FormBuilder) { }
 
   ngOnInit(): void {
+  }
+
+  guardar1() {
+    let nuevoUser : User = {
+      nombre:this.formulario1.get('nombre')?.value,
+      apellido:this.formulario1.get('apellido')?.value,
+      pagina:this.formulario1.get('pagina')?.value
+    }
+    this.usuarios.push(nuevoUser);
+    this.limpiarForm1();
+  }
+
+  guardar2() {
+    let nuevoComent : Coment = {
+      mejoras:this.formulario2.get('mejoras')?.value,
+      gustos:this.formulario2.get('gustos')?.value
+  }
+
+    this.comentarios.push(nuevoComent);
+    this.limpiarForm2();
+  }
+
+  limpiarForm1() {
+    this.formulario1.reset();
+  }
+
+  limpiarForm2() {
+    this.formulario2.reset();
   }
 
 }
