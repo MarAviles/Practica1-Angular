@@ -18,6 +18,20 @@
             
     </div>
 </div>
+
+<div class="contenedor">
+    <h2>¿Qué te gustaría saber sobre mí?</h2>
+    <select [(ngModel)] ="select">
+        <option value="Vida Personal">Vida Personal</option>
+        <option value="Gustos Personales">Lenguajes de programación</option>
+        <option value="Vida laboral">Vida laboral</option>
+        <option value="Proyectos propios">Proyectos propios</option>
+        
+    </select>
+
+    <h2>Esta seleccionado : {{select}}</h2>
+</div>
+
   
 <footer>
 <app-footer></app-footer>

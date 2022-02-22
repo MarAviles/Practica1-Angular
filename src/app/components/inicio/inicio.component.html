@@ -3,8 +3,10 @@
 </header>
   
 <div class="contenido">
-    <img src="../../../assets/yo.jpeg">
-
+    <div id="imagen">
+        <img src="../../../assets/yo.jpeg">
+    </div>
+    
     <!-- Información -->
     <div id="informacion">
         <h2>¡Bienvenido!</h2>
@@ -13,6 +15,78 @@
         <p>Si quieres saber más sobre mí navega en esta página!!</p>
     </div>
 </div>
+
+<div class="contenidoForm">
+
+    <div class="contenedores" id = "formulario1">
+        <h2>Dame tu opnión</h2>
+        <form form [formGroup] = "formulario1" (ngSubmit)="guardar1()">
+            <label for="nombre">Nombre</label><br>
+            <input type="text" id="name" formControlName="nombre"><br>
+
+            <label for="apellido">Apellido</label><br>
+            <input type="text" id="apellido" formControlName="apellido"><br>
+
+            <label for="pagina">¿Te gusta la página?</label><br>
+            <input type="radio" formControlName="pagina" value="Sí" checked>Sí
+            <input type="radio" formControlName="pagina" value="No">No<br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div class="contenedores">
+        <h2>Déjame un comentario</h2>
+        <form form [formGroup] = "formulario2" (ngSubmit)="guardar2()">
+            <label for="gustos">¿Qué te gustó de la página?</label><br>
+            <textarea formControlName="gustos"></textarea><br>
+
+            <label for="mejoras">¿Qué podría mejorar?</label><br>
+            <textarea formControlName="mejoras"></textarea><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+</div>
+
+<div class="contenidoForm">
+
+    <div *ngIf="status1" class="contenedores" id="tabla">
+        <h2>Listado Usuarios</h2>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>¿Te gusta la página?</th>
+            </tr>
+            <tbody *ngFor="let user of usuarios">
+                    <tr>
+                        <td>{{user.nombre}}</td>
+                        <td>{{user.pagina}}</td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="status2" class="contenedores">
+        <h2>Listado de comentarios</h2>
+        <table>
+            <tr>
+                <th>Gustos</th>
+                <th>Mejoras</th>
+            </tr>
+            <tbody *ngFor="let coment of comentarios">
+                    <tr>
+                        <td>{{coment.gustos}}</td>
+                        <td>{{coment.mejoras}}</td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
   
 <footer>
 <app-footer></app-footer>
