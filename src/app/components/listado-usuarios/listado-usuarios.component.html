@@ -1,0 +1,38 @@
+<div class="contenidoForm">
+
+    <div class="contenedores" id="tabla">
+        <h2>Listado Usuarios</h2>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>¿Te gusta la página?</th>
+            </tr>
+            <tbody *ngFor="let user of usuarios">
+                    <tr>
+                        <td>{{user.nombre}}</td>
+                        <td>{{user.pagina}}</td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="contenedores">
+        <h2>Último y primero</h2>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>¿Te gusta la página?</th>
+            </tr>
+            <tbody >
+                    <tr>
+                        <td>{{first.nombre}}</td>
+                        <td>{{first.pagina}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{last.nombre}}</td>
+                        <td>{{last.pagina}}</td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

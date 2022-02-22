@@ -51,23 +51,6 @@
 </div>
 
 <div class="contenidoForm">
-
-    <div *ngIf="status1" class="contenedores" id="tabla">
-        <h2>Listado Usuarios</h2>
-        <table>
-            <tr>
-                <th>Nombre</th>
-                <th>¿Te gusta la página?</th>
-            </tr>
-            <tbody *ngFor="let user of usuarios">
-                    <tr>
-                        <td>{{user.nombre}}</td>
-                        <td>{{user.pagina}}</td>
-                    </tr>
-            </tbody>
-        </table>
-    </div>
-
     <div *ngIf="status2" class="contenedores">
         <h2>Listado de comentarios</h2>
         <table>
@@ -83,11 +66,10 @@
             </tbody>
         </table>
     </div>
-
+    <button [routerLink]="['/listado']">Ir a listados</button>
 </div>
 
 
-  
 <footer>
 <app-footer></app-footer>
 </footer>

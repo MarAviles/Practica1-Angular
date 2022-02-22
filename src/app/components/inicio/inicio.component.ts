@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { User } from 'src/app/interface/user.modelo';
 import { Coment } from 'src/app/interface/coment.modelo';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-inicio',
@@ -21,11 +22,9 @@ export class InicioComponent implements OnInit {
     gustos:'',
   });
 
-  usuarios:User[]=[];
   comentarios:Coment[]=[];
-  status1 = false;
   status2 = false;
-  constructor(private FormularioInter:FormBuilder) { }
+  constructor(private FormularioInter:FormBuilder, private UserService: UserService) { }
 
   ngOnInit(): void {
   }
@@ -36,8 +35,8 @@ export class InicioComponent implements OnInit {
       apellido:this.formulario1.get('apellido')?.value,
       pagina:this.formulario1.get('pagina')?.value
     }
-    this.usuarios.push(nuevoUser);
-    this.status1 = true;
+    //Añade el usuario en user Service
+    this.UserService.addUser(nuevoUser);
     this.limpiarForm1();
   }
 
