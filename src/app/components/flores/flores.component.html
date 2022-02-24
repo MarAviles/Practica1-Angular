@@ -1,0 +1,17 @@
+<div>
+    <div class="contenedores" id = "formulario">
+        <h2>Dame tu opnión</h2>
+        <form form [formGroup] = "formulario" (ngSubmit)="guardar()">
+            <label for="nombre">Nombre</label><br>
+            <input type="text" id="name" formControlName="nombre"><br>
+
+            <label for="especie">Especie</label><br>
+            <input type="text" id="especie" formControlName="especie"><br>
+
+            <label for="color">Color</label><br>
+            <input type="text" id="color" formControlName="color"><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</div>

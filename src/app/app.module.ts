@@ -8,10 +8,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { AboutComponent } from './components/about/about.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListadoUsuariosComponent } from './components/listado-usuarios/listado-usuarios.component';
+import { FloresComponent } from './components/flores/flores.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { ListadoUsuariosComponent } from './components/listado-usuarios/listado-
     InicioComponent,
     ContactoComponent,
     AboutComponent,
-    ListadoUsuariosComponent
+    ListadoUsuariosComponent,
+    FloresComponent,
   ],
   imports: [
     BrowserModule,
