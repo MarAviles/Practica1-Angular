@@ -11,6 +11,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ListadoUsuariosComponent } from './components/listado-usuarios/listado-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     InicioComponent,
     ContactoComponent,
-    AboutComponent
+    AboutComponent,
+    ListadoUsuariosComponent
   ],
   imports: [
     BrowserModule,
