@@ -14,4 +14,8 @@ export class FlorService {
   getFlores(){
     return this.HttpClient.get(this.url);
   }
+
+  sendFlor(flor: Flor){
+    return this.HttpClient.post(this.url,flor)
+  }
 }

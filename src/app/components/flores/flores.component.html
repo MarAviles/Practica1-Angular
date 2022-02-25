@@ -1,6 +1,6 @@
 <div>
     <div class="contenedores" id = "formulario">
-        <h2>Dame tu opnión</h2>
+        <h2>Resgistra una flor</h2>
         <form form [formGroup] = "formulario" (ngSubmit)="guardar()">
             <label for="nombre">Nombre</label><br>
             <input type="text" id="name" formControlName="nombre"><br>
@@ -13,5 +13,27 @@
 
             <input type="submit" value="Enviar">
         </form>
+    </div>
+    
+    <div>
+        <button (click)="showFlores()">Mostrar flores</button>
+    </div>
+
+    <div *ngIf="status">
+        <h2>Listado de flores</h2>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Especie</th>
+                <th>Color</th>
+            </tr>
+            <tbody *ngFor="let flor of flores">
+                    <tr>
+                        <td>{{flor.nombre}}</td>
+                        <td>{{flor.especie}}</td>
+                        <td>{{flor.color}}</td>
+                    </tr>
+            </tbody>
+        </table>
     </div>
 </div>

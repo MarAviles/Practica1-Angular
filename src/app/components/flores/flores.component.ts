@@ -10,6 +10,9 @@ import { FlorService } from 'src/app/services/flor.service';
 })
 export class FloresComponent implements OnInit {
 
+  flores: Flor[] = [];
+  status = false;
+
   formulario = this.FormBuilder.group({
     nombre:'',
     especie:'',
@@ -19,17 +22,35 @@ export class FloresComponent implements OnInit {
   constructor(private FormBuilder : FormBuilder, private FlorService: FlorService) { }
 
   ngOnInit(): void {
-    this.FlorService.getFlores().subscribe((res:any)=>{
+  }
+
+  guardar(){
+    // let flor: Flor = {
+    //   nombre: this.formulario.get('nombre')?.value,
+    //   especie:this.formulario.get('especie')?.value,
+    //   color: this.formulario.get('color')?.value
+    // }
+    // console.log(flor);
+
+    this.FlorService.sendFlor(this.formulario.value).subscribe((res: any)=>{
       console.log(res);
+    });  
+  }
+
+
+  cleanForm(){
+    this.formulario.reset();
+  }
+
+
+  showFlores(){
+    this.FlorService.getFlores().subscribe((res:any)=>{
+      this.flores = res;
+      console.table(res);
+      this.status = true;
     }, (err) =>{
       console.log(err);
     });
   }
-
-  guardar(){
-    
-  }
-
-  
 
 }
